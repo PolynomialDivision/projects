@@ -57,7 +57,7 @@ Project Info
 - What is the final goal for this project? What would make it a total
   and perfect success?
 
-- Are you already engaged with the project's possible mentors and do
+- Are you already engaged with the project's possible groups and do
   you have any preference for a particular mentor?
   We will try to get you your first choice for a mentor, usually it will
   be the first listed mentor as primary and another as secondary.

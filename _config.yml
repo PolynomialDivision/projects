@@ -2,7 +2,7 @@ title: coala Projects
 license:
   full_form: GNU AFFERO GENERAL PUBLIC LICENSE V3.0
   short_form: GNU AGPL v3.0
-organization: coala
+organization: AStA TU Berlin
 description: A website that showcases interesting projects, using Angular JS.
 baseurl: ""  # the subpath of your site, e.g. /blog
 url: ""  # the base hostname & protocol for your site
@@ -19,7 +19,7 @@ org:
     documentation: "https://coala.io/docs"
     newcomer_doc: "https://coala.io/newcomer"
     code_of_conduct: "https://coala.io/coc"
-    blog: "https://blog.coala.io"
+    blog: "https://asta.tu-berlin.de"
 
 twitter:
   username: coala_io

@@ -11,7 +11,9 @@ angular.module('coala')
                 $scope.selectedStatusesList = []
                 $scope.selectedTagsList = []
                 $scope.selectedLevelsList = []
-                $scope.selectedInitiativesList = []
+                $scope.selectedGroupsList = []
+                $scope.selectedUnisList = []
+                $scope.selectedDatesList = []
                 $scope.selectedCollabsList = []
 
                 var mapping = {
@@ -49,15 +51,18 @@ angular.module('coala')
                                         state.replace('_', ' ').toUpperCase()
                                     ] = mapping[state]
                                 })
+                                //TODO: ADD Here stuff
                                 angular.forEach(project.tags, function (tag) {
                                     $scope.projectFilterOptions.tags.options[tag] = tag
                                 })
-                                $scope.projectFilterOptions.difficulty.options[project.difficulty.toUpperCase()] = project.difficulty
-                                angular.forEach(project.initiatives, function (initiative) {
-                                    $scope.projectFilterOptions.initiatives.options[initiative] = initiative
+                                angular.forEach(project.groups, function (group) {
+                                    $scope.projectFilterOptions.groups.options[group] = group
                                 })
-                                angular.forEach(project.collaborating_projects, function (collab) {
-                                    $scope.projectFilterOptions['collab-projects'].options[collab] = collab
+                                angular.forEach(project.uni, function (uni) {
+                                    $scope.projectFilterOptions.unis.options[uni] = uni
+                                })
+                                angular.forEach(project.dateofevent, function (dateofevent) {
+                                    $scope.projectFilterOptions.dates.options[dateofevent] = dateofevent
                                 })
                             })
                         })
@@ -71,10 +76,10 @@ angular.module('coala')
 
                 $scope.getAllFilters = function () {
                     $scope.initializeSelectorData('status', 'Status', 'selectedStatusesList')
-                    $scope.initializeSelectorData('tags', 'Project Tags', 'selectedTagsList')
-                    $scope.initializeSelectorData('difficulty', 'Difficulty Level', 'selectedLevelsList')
-                    $scope.initializeSelectorData('initiatives', 'Initiatives', 'selectedInitiativesList')
-                    $scope.initializeSelectorData('collab-projects', 'Collaborating Projects', 'selectedCollabsList')
+                    $scope.initializeSelectorData('unis', 'Uni', 'selectedUnisList')
+                    $scope.initializeSelectorData('dates', 'Date', 'selectedDatesList')
+                    $scope.initializeSelectorData('tags', 'Tags', 'selectedTagsList')
+                    $scope.initializeSelectorData('groups', 'Groups', 'selectedGroupsList')
                     $scope.getFiltersMetadata()
                 }
 
@@ -83,8 +88,8 @@ angular.module('coala')
                     angular.forEach(projects, function (project) {
                         if (project.status.length === 0 && !selectedProjects.includes(project)) {
                             if (
-                                ($scope.selectedStatusesList.includes("0") && project.mentors.length > 0) ||
-                                ($scope.selectedStatusesList.includes("4") && project.mentors.length === 0)
+                                ($scope.selectedStatusesList.includes("0") && project.groups.length > 0) ||
+                                ($scope.selectedStatusesList.includes("4") && project.groups.length === 0)
                             ) {
                                 selectedProjects.push(project)
                             }
@@ -113,27 +118,42 @@ angular.module('coala')
                     return selectedProjects
                 }
 
-                function filterProjectsByDifficulty(projects) {
+                function filterProjectsByGroups(projects) {
                     var selectedProjects = []
                     angular.forEach(projects, function (project) {
-                        if ($scope.selectedLevelsList.includes(project.difficulty) && !selectedProjects.includes(project)) {
-                            selectedProjects.push(project)
-                        }
-                    })
-                    return selectedProjects
-                }
-
-                function filterProjectsByInitiatives(projects) {
-                    var selectedProjects = []
-                    angular.forEach(projects, function (project) {
-                        angular.forEach(project.initiatives, function (initiative) {
-                            if ($scope.selectedInitiativesList.includes(initiative) && !selectedProjects.includes(project)) {
+                        angular.forEach(project.groups, function (group) {
+                            if ($scope.selectedGroupsList.includes(group) && !selectedProjects.includes(project)) {
                                 selectedProjects.push(project)
                             }
                         })
                     })
                     return selectedProjects
                 }
+
+                function filterProjectsByUnis(projects) {
+                    var selectedProjects = []
+                    angular.forEach(projects, function (project) {
+                        angular.forEach(project.uni, function (uni) {
+                            if ($scope.selectedUnisList.includes(uni) && !selectedProjects.includes(project)) {
+                                selectedProjects.push(project)
+                            }
+                        })
+                    })
+                    return selectedProjects
+                }
+
+                function filterProjectsByDates(projects) {
+                    var selectedProjects = []
+                    angular.forEach(projects, function (project) {
+                        angular.forEach(project.dateofevent, function (dateofevent) {
+                            if ($scope.selectedDatesList.includes(dateofevent) && !selectedProjects.includes(project)) {
+                                selectedProjects.push(project)
+                            }
+                        })
+                    })
+                    return selectedProjects
+                }
+
 
                 function filterProjectsByCollaboratingProjects(projects) {
                     var selectedProjects = []
@@ -154,14 +174,14 @@ angular.module('coala')
                     else if (filter === 'tags') {
                         $scope.selectedTagsList = list
                     }
-                    else if (filter === 'difficulty') {
-                        $scope.selectedLevelsList = list
+                    else if (filter === 'groups') {
+                        $scope.selectedGroupsList = list
                     }
-                    else if (filter === 'initiatives') {
-                        $scope.selectedInitiativesList = list
+                    else if (filter === 'unis') {
+                        $scope.selectedUnisList = list
                     }
-                    else {
-                        $scope.selectedCollabsList = list
+                    else if (filter === 'dates') {
+                        $scope.selectedDatesList = list
                     }
                 }
 
@@ -170,7 +190,9 @@ angular.module('coala')
                         $scope.selectedStatusesList.length > 0 ||
                         $scope.selectedTagsList.length > 0 ||
                         $scope.selectedLevelsList.length > 0 ||
-                        $scope.selectedInitiativesList.length > 0 ||
+                        $scope.selectedGroupsList.length > 0 ||
+                        $scope.selectedUnisList.length > 0 ||
+                        $scope.selectedDatesList.length > 0 ||
                         $scope.selectedCollabsList.length > 0
                     )
                 }
@@ -184,11 +206,14 @@ angular.module('coala')
                         if ($scope.selectedTagsList.length > 0 && filteredProjects.length > 0) {
                             filteredProjects = filterProjectsByTags(filteredProjects)
                         }
-                        if ($scope.selectedLevelsList.length > 0 && filteredProjects.length > 0) {
-                            filteredProjects = filterProjectsByDifficulty(filteredProjects)
+                        if ($scope.selectedGroupsList.length > 0 && filteredProjects.length > 0) {
+                            filteredProjects = filterProjectsByGroups(filteredProjects)
                         }
-                        if ($scope.selectedInitiativesList.length > 0 && filteredProjects.length > 0) {
-                            filteredProjects = filterProjectsByInitiatives(filteredProjects)
+                        if ($scope.selectedUnisList.length > 0 && filteredProjects.length > 0) {
+                            filteredProjects = filterProjectsByUnis(filteredProjects)
+                        }
+                        if ($scope.selectedDatesList.length > 0 && filteredProjects.length > 0) {
+                            filteredProjects = filterProjectsByDates(filteredProjects)
                         }
                         if ($scope.selectedCollabsList.length > 0 && filteredProjects.length > 0) {
                             filteredProjects = filterProjectsByCollaboratingProjects(filteredProjects)
@@ -216,6 +241,11 @@ angular.module('coala')
                 }
 
                 $scope.getDefaultProjectsMetadata = function () {
+                    $http.get('data/groups.json')
+                        .then(function (res) {
+                            $scope.selfgroupWebsiteDict = res.data
+                        })
+
                     $http.get('data/projects.liquid')
                         .then(function (res) {
                             $scope.projectList = res.data;

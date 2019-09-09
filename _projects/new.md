@@ -2,18 +2,17 @@
 collaborating_projects:
   - coala
   - vulture
-desc: "This project is about using vulture to automatically remove unused python code."
+desc: "BLABLA."
 developers_involved: []
-uni: tuberlin
-dateofevent: 2017-4-8
 difficulty: medium
 status: open
 issues: []
 markdown: vulture.md
 groups:
   - astatu
-  - astafu
-name: "Vulture dead code removal"
+uni: fuberlin
+name: "Something"
+dateofevent: 2017-4-2
 requirements:
   - "The participant should have one patch to [vulture](https://github.com/jendrikseipp/vulture) accepted."
   - "Being familiar with the current Bear API and what it provides. Fixing an

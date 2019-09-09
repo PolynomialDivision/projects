@@ -11,7 +11,7 @@ project: git-bug Github and Gitlab bidirectional syncing
 project_link: https://summerofcode.withgoogle.com/dashboard/project/6390539212029952
 tarball: https://github.com/A-Hilaly/gsoc-report/raw/master/a-hilaly.tar.gz
 sha256sum: d0dc2fc5a78d5c1fa173eac6b83961e5fc913493b7a3f880c3880f89b8140360
-mentors: >
+groups: >
  [Michael Muré](https://github.com/MichaelMure)
 phase:
  - Bonding : https://github.com/MichaelMure/git-bug/milestone/1

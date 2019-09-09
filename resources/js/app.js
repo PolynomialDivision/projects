@@ -49,8 +49,8 @@
                 template: '<projects></projects>',
                 reloadOnSearch: false
             }).
-            when('/mentors', {
-                template: '<mentors></mentors>'
+            when('/groups', {
+                template: '<groups></groups>'
             }).
             when('/faq', {
                 template: '<faq></faq>'
