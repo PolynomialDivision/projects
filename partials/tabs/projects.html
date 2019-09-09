@@ -54,6 +54,8 @@ therefore adding an ignore comment -->
                 <div class="card-title center">{{ project.name }}</div>
                 <div btf-markdown="project.desc" class="markdown"></div>
               </div>
+              <div ng-show="project.dateofevent.length>0" class="card-action card-title center"> <span ng-repeat="dateofevent in project.dateofevent">{{dateofevent}}</span> </div>
+              <div ng-show="project.uni.length>0" class="card-action card-title center"> <span ng-repeat="uni in project.uni">{{uni}}</span> </div>
               <div ng-show="project.groups.length>0" class="card-action"> <span ng-repeat="group in project.groups | limitTo:4"><a ng-href="{{selfgroupWebsiteDict[group]}}" class="groups-github-id" target="_blank">{{group}}</a></span> </div>
               <div ng-show="project.initiatives.length>0" class="project-overview-element clickable card-action"> <span ng-click="search(initiative)" class="pr-element-detail chip" ng-repeat="initiative in project.initiatives">{{ initiative }}</span>
                 <br> </div>
@@ -81,6 +83,15 @@ therefore adding an ignore comment -->
         <div class="name"> {{ currentProject.name }} </div>
         <div ng-show="currentProject.uni.length>0">
           <div class="small-heading uppercase">Uni</div> <span class="pr-element-detail chip" ng-repeat="uni in currentProject.uni">{{ uni }}</span>
+          <br> </div>
+          <div ng-show="currentProject.location.length>0">
+            <div class="small-heading uppercase">location</div> <span class="pr-element-detail chip" ng-repeat="location in currentProject.location">{{ location }}</span>
+          <br> </div>
+          <div ng-show="currentProject.dateofevent.length>0">
+            <div class="small-heading uppercase">Date</div> <span class="pr-element-detail chip" ng-repeat="dateofevent in currentProject.dateofevent">{{ dateofevent }}</span>
+          <br> </div>
+          <div ng-show="currentProject.time.length>0">
+            <div class="small-heading uppercase">Time</div> <span class="pr-element-detail chip" ng-repeat="time in currentProject.time">{{ time }}</span>
           <br> </div>
         <div ng-show="currentProject.initiatives.length>0">
           <div class="small-heading uppercase">Initiatives</div> <span class="chip" ng-repeat="initiative in currentProject.initiatives">{{ initiative }}</span>

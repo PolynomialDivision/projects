@@ -5,6 +5,8 @@
 {
 "name" : "{{ post.name }}",
 "desc" : "{{ post.desc }}",
+"time" : [{% for time in post.time %} "{{ time }}" {% unless forloop.last %},{% endunless %}{% endfor %}],
+"location" : [{% for location in post.location %} "{{ location }}" {% unless forloop.last %},{% endunless %}{% endfor %}],
 "dateofevent" : [{% for dateofevent in post.dateofevent %} "{{ dateofevent }}" {% unless forloop.last %},{% endunless %}{% endfor %}],
 "uni"  : [{% for uni in post.uni %} "{{ uni }}" {% unless forloop.last %},{% endunless %}{% endfor %}],
 "groups" :  [{% for group in post.groups %} "{{ group }}" {% unless forloop.last %},{% endunless %}{% endfor %}],

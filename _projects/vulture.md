@@ -4,15 +4,17 @@ collaborating_projects:
   - vulture
 desc: "This project is about using vulture to automatically remove unused python code."
 developers_involved: []
-uni: tuberlin
-dateofevent: 2017-4-8
+uni: TU Berlin
+dateofevent: 2017-4-3
 difficulty: medium
 status: open
 issues: []
 markdown: vulture.md
 groups:
-  - astatu
-  - astafu
+  - AStA TU
+  - AStA FU
+time: 10 Uhr
+location: ZGK
 name: "Vulture dead code removal"
 requirements:
   - "The participant should have one patch to [vulture](https://github.com/jendrikseipp/vulture) accepted."

@@ -9,8 +9,8 @@ status: open
 issues: []
 markdown: vulture.md
 groups:
-  - astatu
-uni: fuberlin
+  - AStA TU
+uni: FU Berlin
 name: "Something"
 dateofevent: 2017-4-2
 requirements:
