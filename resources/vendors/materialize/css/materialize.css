@@ -4587,6 +4587,11 @@ small {
   line-height: 48px;
 }
 
+.card .card-content .card-content-new
+{
+  height: 10px;
+}
+
 .card .card-action {
   position: relative;
   background-color: inherit;

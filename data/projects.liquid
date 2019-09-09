@@ -5,16 +5,15 @@
 {
 "name" : "{{ post.name }}",
 "desc" : "{{ post.desc }}",
+"image": "{{ post.image }}",
 "time" : [{% for time in post.time %} "{{ time }}" {% unless forloop.last %},{% endunless %}{% endfor %}],
 "location" : [{% for location in post.location %} "{{ location }}" {% unless forloop.last %},{% endunless %}{% endfor %}],
 "dateofevent" : [{% for dateofevent in post.dateofevent %} "{{ dateofevent }}" {% unless forloop.last %},{% endunless %}{% endfor %}],
 "uni"  : [{% for uni in post.uni %} "{{ uni }}" {% unless forloop.last %},{% endunless %}{% endfor %}],
 "groups" :  [{% for group in post.groups %} "{{ group }}" {% unless forloop.last %},{% endunless %}{% endfor %}],
 "tags" :  [{% for tag in post.tags %} "{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
-"collaborating_projects" : [{% for cp in post.collaborating_projects %}"{{ cp }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
 "content_url" : "{{post.url}}",
 "path" : "{{post.path}}",
-"status" : [{% for status in post.status %} "{{ status }}" {% unless forloop.last %},{% endunless %}{% endfor %}],
 "markdown" : "{{post.path | replace: '_projects/',''}}"
 }{% unless forloop.last %},{% endunless %}{% endfor %}
 ]

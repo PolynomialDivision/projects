@@ -8,7 +8,6 @@ angular.module('coala')
 
                 $scope.message = {}
                 $scope.projectFilterOptions = {}
-                $scope.selectedStatusesList = []
                 $scope.selectedTagsList = []
                 $scope.selectedLevelsList = []
                 $scope.selectedGroupsList = []
@@ -43,15 +42,6 @@ angular.module('coala')
                         .then(function (res) {
                             var projects = res.data;
                             angular.forEach(projects, function (project) {
-                                if (project.status.length === 0) {
-                                    $scope.projectFilterOptions.status.options['NOT YET STARTED'] = 0
-                                }
-                                angular.forEach(project.status, function (state) {
-                                    $scope.projectFilterOptions.status.options[
-                                        state.replace('_', ' ').toUpperCase()
-                                    ] = mapping[state]
-                                })
-                                //TODO: ADD Here stuff
                                 angular.forEach(project.tags, function (tag) {
                                     $scope.projectFilterOptions.tags.options[tag] = tag
                                 })
@@ -75,35 +65,11 @@ angular.module('coala')
                 }
 
                 $scope.getAllFilters = function () {
-                    $scope.initializeSelectorData('status', 'Status', 'selectedStatusesList')
                     $scope.initializeSelectorData('unis', 'Uni', 'selectedUnisList')
                     $scope.initializeSelectorData('dates', 'Date', 'selectedDatesList')
                     $scope.initializeSelectorData('tags', 'Tags', 'selectedTagsList')
                     $scope.initializeSelectorData('groups', 'Groups', 'selectedGroupsList')
                     $scope.getFiltersMetadata()
-                }
-
-                function filterProjectsByStatus(projects) {
-                    var selectedProjects = []
-                    angular.forEach(projects, function (project) {
-                        if (project.status.length === 0 && !selectedProjects.includes(project)) {
-                            if (
-                                ($scope.selectedStatusesList.includes("0") && project.groups.length > 0) ||
-                                ($scope.selectedStatusesList.includes("4") && project.groups.length === 0)
-                            ) {
-                                selectedProjects.push(project)
-                            }
-                        }
-                        else {
-                            angular.forEach(project.status, function (state) {
-                                var mappedState = (mapping[state]).toString()
-                                if ($scope.selectedStatusesList.includes(mappedState) && !selectedProjects.includes(project)) {
-                                    selectedProjects.push(project)
-                                }
-                            })
-                        }
-                    })
-                    return selectedProjects
                 }
 
                 function filterProjectsByTags(projects) {
@@ -168,10 +134,7 @@ angular.module('coala')
                 }
 
                 $scope.setModelList = function (filter, list) {
-                    if (filter === 'status') {
-                        $scope.selectedStatusesList = list
-                    }
-                    else if (filter === 'tags') {
+                    if (filter === 'tags') {
                         $scope.selectedTagsList = list
                     }
                     else if (filter === 'groups') {
@@ -187,7 +150,6 @@ angular.module('coala')
 
                 function anyFiltersApplied() {
                     return (
-                        $scope.selectedStatusesList.length > 0 ||
                         $scope.selectedTagsList.length > 0 ||
                         $scope.selectedLevelsList.length > 0 ||
                         $scope.selectedGroupsList.length > 0 ||
@@ -200,9 +162,6 @@ angular.module('coala')
                 $scope.applyFilters = function () {
                     var filteredProjects = $scope.allProjects
                     if (anyFiltersApplied()) {
-                        if ($scope.selectedStatusesList.length > 0 && filteredProjects.length > 0) {
-                            filteredProjects = filterProjectsByStatus(filteredProjects)
-                        }
                         if ($scope.selectedTagsList.length > 0 && filteredProjects.length > 0) {
                             filteredProjects = filterProjectsByTags(filteredProjects)
                         }
