@@ -43,6 +43,9 @@
             when('/faq', {
                 template: '<faq></faq>'
             }).
+            when('/calenda', {
+                template: '<calenda></calenda>'
+            }).
             when('/students', {
                 template: '<students></students>'
             }).
