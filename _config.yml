@@ -3,7 +3,7 @@ license:
   full_form: GNU AFFERO GENERAL PUBLIC LICENSE V3.0
   short_form: GNU AGPL v3.0
 organization: AStA TU Berlin
-description: A website that showcases interesting projects, using Angular JS.
+description: A website for KriWo 2019.
 baseurl: ""  # the subpath of your site, e.g. /blog
 url: ""  # the base hostname & protocol for your site
 githuburl: "https://github.com/coala/projects"
@@ -16,16 +16,17 @@ gsoc_switch_month: 6
 
 org:
   site_links:
-    documentation: "https://coala.io/docs"
-    newcomer_doc: "https://coala.io/newcomer"
-    code_of_conduct: "https://coala.io/coc"
-    blog: "https://asta.tu-berlin.de"
+    website: "https://asta.tu-berlin.de"
+    twitter: "https://twitter.com/astatu"
+    instagram: "https://www.instagram.com/astatuberlin"
+    friendica: "https://friendica.astatu.berlin/profile/astatu"
 
 twitter:
-  username: coala_io
+  username: astatu
 
 plugins:
   - jekyll-netlify
+  - jekyll-admin
 
 # Build settings
 exclude: [vendor, _projects/example.md]
