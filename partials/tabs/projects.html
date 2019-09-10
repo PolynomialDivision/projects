@@ -59,10 +59,8 @@ therefore adding an ignore comment -->
               </div>
               <div ng-click="lc.showProject(project)" ng-show="project.dateofevent.length>0"
                 class="card-action center waves-effect"> <span
-                  ng-repeat="dateofevent in project.dateofevent">{{dateofevent}}</span> </div>
-              <div ng-click="lc.showProject(project)" ng-show="project.time.length>0"
-                class="card-action center waves-effect"> <span
-                  ng-repeat="time in project.time">{{time}}</span> </div>
+                  ng-repeat="dateofevent in project.dateofevent">{{dateofevent}}</span>
+                <span ng-repeat="time in project.time">, {{time}}</span></div>
               <div ng-show="project.uni.length>0" class="card-action center"> <span
                   ng-repeat="uni in project.uni">{{uni}}</span> </div>
               <div ng-show="project.groups.length>0" class="card-action center"> <span
