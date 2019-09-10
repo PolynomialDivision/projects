@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <!-- projectCtrl is linked with angular controller of the same name
 therefore adding an ignore comment -->
-<section id="projectCtrl"> <!-- Ignore HTMLLintBear -->
+<section id="projectCtrl">
+  <!-- Ignore HTMLLintBear -->
   <br>
   <div class="main-content container">
     <div class="col m8 col offset-m2 s12">
       <div class="filter-projects-inputs">
         <div class="input-field searchbar">
-          <input ng-model="searchText" placeholder="Search for an event" id="search" type="search" class="validate"> </div>
+          <input ng-model="searchText" placeholder="Search for an event" id="search" type="search" class="validate">
+        </div>
         <div class="filter-btn apply-flex center-content">
           <a id="filters" class="waves-effect waves-light btn-large" ng-click="toggleFiltersDisplay()">
             <b>Filter Events</b>
@@ -22,7 +24,8 @@ therefore adding an ignore comment -->
         <div class="filters-inputs apply-flex">
           <div class="filter-select-fields apply-flex evenly-spread-content">
             <label class="project-filter" ng-repeat="(filter, metadata) in projectFilterOptions">
-              <select class="{{ filter }}-selector" ng-model="metadata.model" ng-change="setModelList(filter, metadata.model)" name="{{ filter }}-selector" multiple>
+              <select class="{{ filter }}-selector" ng-model="metadata.model"
+                ng-change="setModelList(filter, metadata.model)" name="{{ filter }}-selector" multiple>
                 <option value="" disabled>{{ metadata.label }}</option>
                 <option value="{{ value }}" ng-repeat="(key, value) in metadata.options">{{ key }}</option>
               </select>
@@ -54,10 +57,17 @@ therefore adding an ignore comment -->
                 <div class="card-title center">{{ project.name }}</div>
                 <div btf-markdown="project.desc" class="markdown"></div>
               </div>
-              <div ng-click="lc.showProject(project)" ng-show="project.dateofevent.length>0" class="card-action card-title center waves-effect"> <span ng-repeat="dateofevent in project.dateofevent">{{dateofevent}}</span> </div>
-              <div ng-click="lc.showProject(project)" ng-show="project.time.length>0" class="card-action card-title center waves-effect"> <span ng-repeat="time in project.time">{{time}}</span> </div>
-              <div ng-show="project.uni.length>0" class="card-action card-title center"> <span ng-repeat="uni in project.uni">{{uni}}</span> </div>
-              <div ng-show="project.groups.length>0" class="card-action"> <span ng-repeat="group in project.groups | limitTo:4"><a ng-href="{{selfgroupWebsiteDict[group]}}" class="groups-github-id" target="_blank">{{group}}</a></span> </div>
+              <div ng-click="lc.showProject(project)" ng-show="project.dateofevent.length>0"
+                class="card-action card-title center waves-effect"> <span
+                  ng-repeat="dateofevent in project.dateofevent">{{dateofevent}}</span> </div>
+              <div ng-click="lc.showProject(project)" ng-show="project.time.length>0"
+                class="card-action card-title center waves-effect"> <span
+                  ng-repeat="time in project.time">{{time}}</span> </div>
+              <div ng-show="project.uni.length>0" class="card-action card-title center"> <span
+                  ng-repeat="uni in project.uni">{{uni}}</span> </div>
+              <div ng-show="project.groups.length>0" class="card-action"> <span
+                  ng-repeat="group in project.groups | limitTo:4"><a ng-href="{{selfgroupWebsiteDict[group]}}"
+                    class="groups-github-id" target="_blank">{{group}}</a></span> </div>
             </div>
           </div>
         </div>
@@ -69,42 +79,56 @@ therefore adding an ignore comment -->
       <div class="col m4 profile">
         <div class="name"> {{ currentProject.name }} </div>
         <div ng-show="currentProject.uni.length>0">
-          <div class="small-heading uppercase">Uni</div> <span class="pr-element-detail chip" ng-repeat="uni in currentProject.uni">{{ uni }}</span>
-          <br> </div>
-          <div ng-show="currentProject.location.length>0">
-            <div class="small-heading uppercase">location</div> <span class="pr-element-detail chip" ng-repeat="location in currentProject.location">{{ location }}</span>
-          <br> </div>
-          <div ng-show="currentProject.dateofevent.length>0">
-            <div class="small-heading uppercase">Date</div> <span class="pr-element-detail chip" ng-repeat="dateofevent in currentProject.dateofevent">{{ dateofevent }}</span>
-          <br> </div>
-          <div ng-show="currentProject.time.length>0">
-            <div class="small-heading uppercase">Time</div> <span class="pr-element-detail chip" ng-repeat="time in currentProject.time">{{ time }}</span>
-          <br> </div>
+          <div class="small-heading uppercase">Uni</div> <span class="pr-element-detail chip"
+            ng-repeat="uni in currentProject.uni">{{ uni }}</span>
+          <br>
+        </div>
+        <div ng-show="currentProject.location.length>0">
+          <div class="small-heading uppercase">location</div> <span class="pr-element-detail chip"
+            ng-repeat="location in currentProject.location">{{ location }}</span>
+          <br>
+        </div>
+        <div ng-show="currentProject.dateofevent.length>0">
+          <div class="small-heading uppercase">Date</div> <span class="pr-element-detail chip"
+            ng-repeat="dateofevent in currentProject.dateofevent">{{ dateofevent }}</span>
+          <br>
+        </div>
+        <div ng-show="currentProject.time.length>0">
+          <div class="small-heading uppercase">Time</div> <span class="pr-element-detail chip"
+            ng-repeat="time in currentProject.time">{{ time }}</span>
+          <br>
+        </div>
         <div ng-show="currentProject.tags.length>0">
-          <div class="small-heading uppercase">Tags</div> <span class="pr-element-detail chip" ng-repeat="tags in currentProject.tags">{{ tags }}</span> </div>
+          <div class="small-heading uppercase">Tags</div> <span class="pr-element-detail chip"
+            ng-repeat="tags in currentProject.tags">{{ tags }}</span>
+        </div>
         <div ng-show="currentProject.groups.length>0" class="project-detail-element">
           <div class="small-heading uppercase">Groups</div>
-            <span class="pr-element-detail chip" ng-repeat="group in currentProject.groups">
-              <a ng-href="{{selfgroupWebsiteDict[group]}}" class="groups-github-id chip" target="_blank">@{{group}}</a>
-            </span>
+          <span class="pr-element-detail chip" ng-repeat="group in currentProject.groups">
+            <a ng-href="{{selfgroupWebsiteDict[group]}}" class="groups-github-id chip" target="_blank">@{{group}}</a>
+          </span>
         </div>
       </div>
       <div class="col m8 dashboard">
         <div btf-markdown="currentProject.content" class="description markdown"></div>
         <br>
-        <br> </div>
+        <br>
+      </div>
     </div>
   </div>
-  <i ng-show="currentProject" ng-click="moveToNext('left')" class="fa fa-arrow-circle-left arrow-click arrow-move-left" aria-hidden="true"></i>
-  <i ng-show="currentProject" ng-click="moveToNext('right')" class="fa fa-arrow-circle-right arrow-click arrow-move-right" aria-hidden="true"></i>
+  <i ng-show="currentProject" ng-click="moveToNext('left')" class="fa fa-arrow-circle-left arrow-click arrow-move-left"
+    aria-hidden="true"></i>
+  <i ng-show="currentProject" ng-click="moveToNext('right')"
+    class="fa fa-arrow-circle-right arrow-click arrow-move-right" aria-hidden="true"></i>
 </section>
 
 
 <script>
-  $(document).ready(function(){
+  $(document).ready(function () {
     $('.explore').click(function () {
       $('html,body').animate({
-        scrollTop: $(".showcase").offset().top},
+        scrollTop: $(".showcase").offset().top
+      },
         'slow');
     })
 
@@ -117,12 +141,12 @@ therefore adding an ignore comment -->
       out_duration: 200, // Transition out duration
       starting_top: '10%', // Starting top style attribute
       ending_top: '10%', // Ending top style attribute
-      ready:function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+      ready: function (modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
         $(this).focus();
-      },complete:function(){
-      angular.element('#projectCtrl').scope().updateLink();
-      angular.element('#projectCtrl').scope().$apply();
-     } // Callback for Modal close
+      }, complete: function () {
+        angular.element('#projectCtrl').scope().updateLink();
+        angular.element('#projectCtrl').scope().$apply();
+      } // Callback for Modal close
     }
     );
   })
