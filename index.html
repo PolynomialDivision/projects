@@ -19,7 +19,7 @@
   <script src="resources/js/app.js"></script>
   <!-- Import coala module directives -->
   <script src="resources/js/directives/projects.js"></script>
-  <script src="resources/js/directives/calenda.js"></script>
+  <script src="resources/js/directives/calendar.js"></script>
   <script src="resources/js/directives/groups.js"></script>
   <script src="resources/js/directives/faqs.js"></script>
 
@@ -48,9 +48,9 @@
               Events
             </a>
           </li>
-          <li ng-class="{active:nc.isSet('/calenda')}">
-            <a class="uppercase" ng-click="nc.setView('/calenda')" onmousedown="keyPressed(event, '#/calenda')">
-              Calenda
+          <li ng-class="{active:nc.isSet('/calendar')}">
+            <a class="uppercase" ng-click="nc.setView('/calendar')" onmousedown="keyPressed(event, '#/calendar')">
+              Calendar
             </a>
           </li>
           <li ng-class="{active:nc.isSet('/faq')}">
@@ -64,8 +64,8 @@
     <ul class="side-nav" id="mobile-nav" ng-controller="NavController as nc">
       <li ng-class="{active:nc.isSet('/projects')}"><a class="uppercase" ng-click="nc.setView('/projects')"
           onmousedown="keyPressed(event, '#/projects')">Projects</a></li>
-      <li ng-class="{active:nc.isSet('/calenda')}"><a class="uppercase" ng-click="nc.setView('/calenda')"
-          onmousedown="keyPressed(event, '#/calenda')">Calenda</a></li>
+      <li ng-class="{active:nc.isSet('/calendar')}"><a class="uppercase" ng-click="nc.setView('/calendar')"
+          onmousedown="keyPressed(event, '#/calendar')">Calendar</a></li>
       <li ng-class="{active:nc.isSet('/faq')}"><a ng-click="nc.setView('/faq')" onmousedown="keyPressed(event, '#/faq')"
           onerror="">FAQs</a></li>
       <li><a href="{{ site.githuburl }}" target="_blank" title="Fork us on GitHub"><i class="fa fa-github fa-2x"

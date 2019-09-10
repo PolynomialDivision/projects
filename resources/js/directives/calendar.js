@@ -1,8 +1,8 @@
 angular.module('coala')
-    .directive('calenda', ['$http', function ($http) {
+    .directive('calendar', ['$http', function ($http) {
         return {
             restrict: 'E',
-            templateUrl: '/partials/tabs/calenda.html',
+            templateUrl: '/partials/tabs/calendar.html',
             controller: function ($scope, $rootScope) {
                 self = this
 
