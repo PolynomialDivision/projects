@@ -65,7 +65,7 @@ therefore adding an ignore comment -->
                   ng-repeat="time in project.time">{{time}}</span> </div>
               <div ng-show="project.uni.length>0" class="card-action center"> <span
                   ng-repeat="uni in project.uni">{{uni}}</span> </div>
-              <div ng-show="project.groups.length>0" class="card-action"> <span
+              <div ng-show="project.groups.length>0" class="card-action center"> <span
                   ng-repeat="group in project.groups | limitTo:4"><a ng-href="{{selfgroupWebsiteDict[group]}}"
                     class="groups-github-id" target="_blank">{{group}}</a></span> </div>
             </div>
