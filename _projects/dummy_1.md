@@ -2,10 +2,11 @@
 name: "Lesung"
 desc: "Hier findet eine super interessante Lesung statt!"
 uni: FU Berlin
-dateofevent: "25.12.2020"
+dateofevent: "2019-10-10"
 groups:
   - AStA FU
-time: "10:00"
+starttime: "10:00"
+endtime: "12:00"
 location: Plenarsaal AStA
 tags:
   - lesung
