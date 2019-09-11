@@ -35,7 +35,7 @@ collections:
   projects:
     output: true
   reports:
-    output: true
+    output: false
   faq:
     output: true
   calenda:
@@ -57,3 +57,13 @@ defaults:
       location: Street 2
       tags:
         - template
+
+jekyll_admin:
+  hidden_links:
+    - posts
+    - pages
+    - staticfiles
+    - datafiles
+    - configuration
+    - calenda
+    - reports
