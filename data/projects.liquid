@@ -3,7 +3,7 @@
 [
 {% for post in site.projects %}
 {
-"name" : "{{ post.name }}",
+"name" : "{{ post.title }}",
 "desc" : "{{ post.desc }}",
 "image": "{{ post.image }}",
 "starttime" : [{% for starttime in post.starttime %} "{{ starttime }}" {% unless forloop.last %},{% endunless %}{% endfor %}],

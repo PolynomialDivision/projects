@@ -1,5 +1,5 @@
 ---
-name: "Name of event"
+title: "Name of event"
 desc: "Description of event!"
 uni: TU Berlin
 dateofevent: "2019-10-11"

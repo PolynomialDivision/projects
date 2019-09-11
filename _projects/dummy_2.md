@@ -1,5 +1,5 @@
 ---
-name: "Party"
+title: "Party"
 desc: "Mega coole Party!"
 uni: Other
 dateofevent: "2019-10-11"

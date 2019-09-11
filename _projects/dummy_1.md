@@ -1,5 +1,5 @@
 ---
-name: "Lesung"
+title: "Lesung"
 desc: "Hier findet eine super interessante Lesung statt!"
 uni: FU Berlin
 dateofevent: "2019-10-10"

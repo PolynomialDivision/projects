@@ -3,7 +3,7 @@
 [
 {% for post in site.projects %}
 {
-"title" : "{{ post.name }}",
+"title" : "{{ post.title }}",
 "start" : "{{ post.dateofevent }}T{{ post.starttime }}",
 "end" : "{{ post.dateofevent }}T{{ post.endtime }}",
 "url"   : "/#/projects?project={{ post.name | downcase | replace: " ", "_" }}&lang=en"

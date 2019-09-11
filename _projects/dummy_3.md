@@ -1,5 +1,5 @@
 ---
-name: "BaFög und Co."
+title: "BaFög und Co."
 desc: "Informationsveranstaltung übers BaFög!"
 uni: HU Berlin
 dateofevent: "2019-10-11"
