@@ -2,10 +2,11 @@
 name: "BaFög und Co."
 desc: "Informationsveranstaltung übers BaFög!"
 uni: HU Berlin
-dateofevent: "25.12.2020"
+dateofevent: "2019-10-11"
 groups:
   - Refrat
-time: "10:00"
+starttime: "14:00"
+endtime: "16:00"
 location: Refrat
 tags:
   - infoveranstaltung

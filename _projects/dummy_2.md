@@ -2,10 +2,11 @@
 name: "Party"
 desc: "Mega coole Party!"
 uni: Other
-dateofevent: "26.12.2020"
+dateofevent: "2019-10-11"
 groups:
   - PartyGruppe
-time: "12:00"
+starttime: "20:00"
+endtime: "24:00"
 location: Tempelhofer Feld
 tags:
   - party

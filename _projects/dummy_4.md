@@ -2,10 +2,11 @@
 name: "Name of event"
 desc: "Description of event!"
 uni: TU Berlin
-dateofevent: "25.12.2020"
+dateofevent: "2019-10-11"
 groups:
   - AStA TU
-time: "10:00"
+starttime: "18:00"
+endtime: "20:00"
 location: Street 2
 tags:
   - template
