@@ -26,6 +26,7 @@ twitter:
 
 plugins:
   - jekyll-netlify
+  - jekyll-admin
 
 # Build settings
 exclude: [vendor, _projects/example.md]
