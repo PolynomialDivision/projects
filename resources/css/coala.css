@@ -852,3 +852,10 @@ img[src~="thumbnail"] {
 img[src~="bordered"] {
   border: 1px solid black;
 }
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
