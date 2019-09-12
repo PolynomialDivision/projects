@@ -5504,12 +5504,9 @@ button.btn-floating {
   height: auto;
   font-size: 1em;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.6);
   line-height: 32px;
   padding: 0 2%;
   max-width: 100%;
-  border-radius: 16px;
-  background-color: #e4e4e4;
   margin-bottom: auto;
   margin-right: auto;
 }
