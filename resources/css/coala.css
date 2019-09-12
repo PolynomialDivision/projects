@@ -607,7 +607,7 @@ a.chip i {
 .theatre .description {
   color: lightgrey;
   text-align: justify;
-  font-size: 1.1em;
+  font-size: 2vw;
   font-family: Roboto;
   font-weight: 300;
   padding: 1em;
