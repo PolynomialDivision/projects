@@ -68,8 +68,6 @@
           onmousedown="keyPressed(event, '#/calendar')">Calendar</a></li>
       <li ng-class="{active:nc.isSet('/faq')}"><a ng-click="nc.setView('/faq')" onmousedown="keyPressed(event, '#/faq')"
           onerror="">FAQs</a></li>
-      <li><a href="{{ site.githuburl }}" target="_blank" title="Fork us on GitHub"><i class="fa fa-github fa-2x"
-            aria-hidden="true"></i></a></li>
     </ul>
     <div ng-view=""></div>
     <div ng-controller="LanguageController as langCtrl" style="position: relative; margin: auto; width: 100px;">
@@ -79,8 +77,6 @@
     </div>
   </main>
   <footer class="page-footer">
-    <div class="row center for-mobile"> <a class="github-button" href="{{ site.githuburl }}" data-size="large">Fork</a>
-    </div>
     <div class="container">
       <div class="row">
         <div class="col m3 s12">
