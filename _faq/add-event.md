@@ -56,6 +56,9 @@ Common Groups are
 2. AStA FU
 3. RefRat
 
+**Important:** Please add tag `accessible` if your event is accessible!
+In German it is called "barrierefreiheit".
+
 --- 
 
 Click on `Create`.
