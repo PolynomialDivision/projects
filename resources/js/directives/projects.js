@@ -30,7 +30,7 @@ angular.module('coala')
                 }
 
                 $scope.sortOrder = function (project) {
-                    return mapping[project.dateofevent];
+                    return project.dateofevent;
                 }
 
                 $scope.sortProjects = function () {
@@ -364,7 +364,7 @@ angular.module('coala')
                         value["url"] = encodeURIComponent(value["name"].split(' ').join('_').toLowerCase());
                         var mapped_status = $scope.sortOrder(value);
                         $scope.projectList[key]['mapped_status'] = mapped_status;
-                        $scope.projects_url_dict[value["url"]] = key
+                        $scope.projects_url_dict[value["url"]] = key;
                     });
 
                     $scope.sortProjects();
