@@ -30,11 +30,11 @@ angular.module('coala')
                 }
 
                 $scope.sortOrder = function (project) {
-                    return project.dateofevent;
+                    return project.dateofevent + project.starttime;
                 }
 
                 $scope.sortProjects = function () {
-                    $scope.projectList = orderBy($scope.projectList, 'dateofevent|starttime');
+                    $scope.projectList = orderBy($scope.projectList, 'dateofevent');
                 }
 
                 $scope.getFiltersMetadata = function () {
@@ -70,6 +70,8 @@ angular.module('coala')
                     $scope.initializeSelectorData('tags', 'Tags', 'selectedTagsList')
                     $scope.initializeSelectorData('groups', 'Groups', 'selectedGroupsList')
                     $scope.getFiltersMetadata()
+
+                    //$scope.selectedDatesList = sort($scope.selectedDatesList);
                 }
 
                 function filterProjectsByTags(projects) {
