@@ -30,7 +30,7 @@ angular.module('coala')
                 }
 
                 $scope.sortOrder = function (project) {
-                    return mapping[project.status];
+                    return mapping[project.dateofevent];
                 }
 
                 $scope.sortProjects = function () {
