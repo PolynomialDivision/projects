@@ -23,6 +23,23 @@ angular.module('coala')
                     'disabled': 4
                 }
 
+                function sortOnKeys(dict) {
+
+                    var sorted = [];
+                    for(var key in dict) {
+                        sorted[sorted.length] = key;
+                    }
+                    sorted.sort();
+                
+                    var tempDict = {};
+                    for(var i = 0; i < sorted.length; i++) {
+                        tempDict[sorted[i]] = dict[sorted[i]];
+                    }
+                
+                    return tempDict;
+                }
+                
+
                 self.displayFilters = false
                 $scope.toggleFiltersDisplay = function () {
                     self.displayFilters = !self.displayFilters
@@ -54,6 +71,10 @@ angular.module('coala')
                                 angular.forEach(project.dateofevent, function (dateofevent) {
                                     $scope.projectFilterOptions.dates.options[dateofevent] = dateofevent
                                 })
+                                $scope.projectFilterOptions.groups.options = sortOnKeys($scope.projectFilterOptions.groups.options);
+                                $scope.projectFilterOptions.tags.options = sortOnKeys($scope.projectFilterOptions.tags.options);
+                                $scope.projectFilterOptions.unis.options = sortOnKeys($scope.projectFilterOptions.unis.options);
+                                $scope.projectFilterOptions.dates.options = sortOnKeys($scope.projectFilterOptions.dates.options);
                             })
                         })
                 }
@@ -70,8 +91,6 @@ angular.module('coala')
                     $scope.initializeSelectorData('tags', 'Tags', 'selectedTagsList')
                     $scope.initializeSelectorData('groups', 'Groups', 'selectedGroupsList')
                     $scope.getFiltersMetadata()
-
-                    //$scope.selectedDatesList = sort($scope.selectedDatesList);
                 }
 
                 function filterProjectsByTags(projects) {
