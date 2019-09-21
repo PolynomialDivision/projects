@@ -388,7 +388,7 @@ angular.module('coala')
                         $scope.projects_url_dict[value["url"]] = key;
                     });
 
-                    $scope.sortProjects();
+                    //$scope.sortProjects();
 
                     var project_requested = encodeURIComponent($location.search().project);
                     if (project_requested) {
