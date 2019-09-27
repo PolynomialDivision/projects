@@ -12,16 +12,16 @@
 <script src='../../resources/js/fullcalendar/packages/timegrid/main.js'></script>
 <script src='../../resources/js/fullcalendar/packages/list/main.js'></script>
 <script>
-
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
       header: {
         left: 'prev,next today',
-        center: 'title',
+        center: '',
         right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
       },
+      locale: 'de',
       defaultView: 'timeGridWeek',
       defaultDate: '2019-10-07',
       navLinks: true, // can click day/week names to navigate views
@@ -30,7 +30,9 @@
       weekNumbersWithinDays: true,
       weekNumberCalculation: 'ISO',
 
-      editable: true,
+      allDaySlot: false,
+      minTime: "11:00:00",
+      editable: false,
       eventLimit: true, // allow "more" link when too many events
       events: 'data/calendar.liquid'
     });
@@ -41,6 +43,7 @@
 <style>
 
   #calendar {
+    margin-top: 100px;
     max-width: 900px;
     margin: 0 auto;
   }
@@ -48,7 +51,7 @@
 </style>
 </head>
 <body>
-
+  <br />
   <div id='calendar'></div>
 
 </body>
